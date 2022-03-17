@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: white;
+  background: #198686;
+  background: -moz-linear-gradient(60deg, #198686 0%, #80339e 100%);
+  background: -webkit-linear-gradient(60deg, #198686 0%, #80339e 100%);
+  background: linear-gradient(60deg, #198686 0%, #80339e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#198686', endColorstr='#80339e', GradientType=1);
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: no-drop;
+}
+ul {
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  list-style: none;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 4px 14px 0px #ddeb1496;
+  -moz-box-shadow: 3px 4px 14px 0px #ddeb1496;
+  box-shadow: 3px 4px 14px 0px #ddeb1496;
+}
+li {
+  color: #000;
+  padding: 10px;
+  font-style: italic;
+  border-bottom: 2px solid #c4c4c4;
+}
+li > button {
+  border: none;
+  background-color: #fff;
+  font-size: 1em;
+  float: right;
+  opacity: 0.6;
+  transition: opacity 1s;
+  
+}
+li > button:hover {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.content-text{
+    margin-right: 10px;;
+}
+.text-center {
+  text-align: center;
+}
+.button {
+  border: none;
+  padding: 3px;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.button-cancel {
+    background-color: rgb(221, 67, 67);
+   
+  }
+  .button-add {
+    background-color: rgb(67, 221, 149);
+   
+  }
+  .button-cancel:hover {
+    background-color: rgb(255, 0, 0);
+   
+  }
+  .button-add:hover {
+    background-color: rgb(0, 255, 76);
+   
+  }
+.input-control {
+  padding: 5px;
+  border-radius: 10px;
+  border: #a5a5a5 solid 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+;
+}
+small {
+  display: flex;
+  background: #f33636;
+  border-radius: 5px;
+  padding:5px;
+  color:white;
+}
+
+fieldset{
+    border:none;
+}
+
+#modal {
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    background: #fff;
+    color:#000;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 4px 14px 0px #00000063;
+    -moz-box-shadow: 3px 4px 14px 0px #00000063;
+    box-shadow: 3px 4px 14px 0px #00000063;
+  }

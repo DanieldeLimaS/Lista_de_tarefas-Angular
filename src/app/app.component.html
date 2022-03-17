@@ -1,5 +1,42 @@
-<h1> {{title}}</h1>
-<button (click)="alteraTexto()">Alterar</button>
-<ul>
-  <li *ngFor="let todo of todos">{{todo.id}}. {{todo.title}} - <button>Concluir</button> - <button>Remover</button></li>
+<h1 class="animated flipInX"> {{title}}</h1>
+
+
+
+<div id="modal" *ngIf="mode=='add'" class="animated flipInX">
+
+  <form [formGroup]="form" class="input-form">
+    <fieldset>
+      <label for="">Tarefa: </label>
+      <input type="text" placeholder="Título da Tarefa" maxlength="60" minlength="5" formControlName="title"
+        class="input-control ">
+      <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Este campo deve conter entre 5 e 60
+        caracteres </small>
+      <button [disabled]="form.invalid" (click)="add()" class="button button-add">
+        <i class="fas fa-save"></i>
+        Salvar</button>
+    </fieldset>
+  </form>
+
+</div>
+<button class="button-add animated fadeInUp button" (click)="changeMode('add')" *ngIf="mode=='list'">
+  <i class=" fas fa-plus-circle"></i>
+  Nova Tarefa
+</button>
+<button class="button-cancel animated fadeInUp button" (click)="changeMode('list')" *ngIf="mode=='add'">
+  <i class="fas fa-times"></i>
+  Cancelar
+</button>
+
+
+<ul class="animated flipInX" *ngIf="mode=='list'">
+  <p *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
+  <li *ngFor="let todo of todos">
+    <label class="content-text">{{todo.id}}. {{todo.title}}</label>
+    <button (click)="remove(todo)" class=""><i class="fas fa-trash-alt" style="color:red"></i></button>
+    <button *ngIf="!todo.done" (click)="markAsDone(todo)" class=""><i
+        class="far fa-check-circle"></i></button>
+    <button *ngIf="todo.done" (click)="markAsUndone(todo)" class=""><i
+        class="fas fa-check-circle" style="color:green"></i></button>
+    
+  </li>
 </ul>
